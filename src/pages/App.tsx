@@ -1,5 +1,5 @@
 import React, { Suspense } from 'react'
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import { HashRouter, Route, Switch } from 'react-router-dom'
 import styled from 'styled-components'
 import GoogleAnalyticsReporter from '../components/analytics/GoogleAnalyticsReporter'
 import Header from '../components/Header'
@@ -67,7 +67,7 @@ export default function App() {
   return (
     <Suspense fallback={null}>
       <TermsAndConditionsModal />
-      <BrowserRouter basename={process.env.PUBLIC_URL}>
+      <HashRouter basename={process.env.PUBLIC_URL}>
         <Route component={GoogleAnalyticsReporter} />
         <Route component={DarkModeQueryParamReader} />
         <AppWrapper>
@@ -97,7 +97,7 @@ export default function App() {
             <Marginer />
           </BodyWrapper>
         </AppWrapper>
-      </BrowserRouter>
+      </HashRouter>
     </Suspense>
   )
 }

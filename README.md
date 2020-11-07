@@ -6,6 +6,8 @@ As a new DeFi protocol, DeFi Swap is designed to be the best place to swap and f
 
 Please visit https://crypto.com/defi for more information!
 
+Arweave port of Crypto.com DeFi Swap is available on the permaweb: [Crypto.com DeFi Swap on Permaweb]()
+
 ## Submit a token request
 
 Please see the [swap-token-list](https://github.com/crypto-com/swap-token-list) repository.

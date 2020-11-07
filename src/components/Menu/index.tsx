@@ -91,27 +91,31 @@ export default function Menu() {
       </StyledMenuButton>
       {open && (
         <MenuFlyout>
-          <MenuItem id="link" href={`${process.env.PUBLIC_URL || ''}/wallet`}>
+          <MenuItem id="link" href={`https://crypto.com/en/defi/wallet/`}>
             <Info size={14} />
             About
           </MenuItem>
-          <MenuItem id="link" href={`${process.env.PUBLIC_URL || ''}/swap-whitepaper`}>
+          <MenuItem id="link" href={`https://blog.crypto.com/defi-swap-whitepaper/`}>
             <BookOpen size={14} />
             Whitepaper
           </MenuItem>
-          <MenuItem id="link" href={`${process.env.PUBLIC_URL || ''}/swap-info`}>
+          <MenuItem id="link" href={`https://crypto.com/defi/swap-info`}>
             <PieChart size={14} />
             Analytics
           </MenuItem>
-          <MenuItem id="link" href={`${process.env.PUBLIC_URL || ''}/swap-faq`}>
+          <MenuItem id="link" href={`https://help.crypto.com/en/collections/2543099-defi-swap`}>
             <HelpCircle size={14} />
             FAQ
           </MenuItem>
-          <MenuItem id="link" href={`${process.env.PUBLIC_URL || ''}/swap-github`}>
+          <MenuItem id="link" href={`https://www.youtube.com/watch?v=-gYXR5sejZw&feature=youtu.be`}>
+            <HelpCircle size={14} />
+            Tutorial
+          </MenuItem>
+          <MenuItem id="link" href={`https://help.crypto.com/en/articles/4429400-defi-swap-tools-resources`}>
             <Code size={14} />
             Code
           </MenuItem>
-          <MenuItem id="link" href={`${process.env.PUBLIC_URL || ''}/swap-terms`}>
+          <MenuItem id="link" href={`https://crypto.com/document/defi_swap_tnc`}>
             <File size={14} />
             Terms
           </MenuItem>
