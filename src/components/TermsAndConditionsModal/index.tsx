@@ -67,7 +67,7 @@ export default function TermsAndConditionsModal() {
                   onChange={toggleUnderstand}
                 />{' '}
                 I understand and agree to the{' '}
-                <ExternalLink href={`${process.env.PUBLIC_URL || ''}/swap-terms`}>
+                <ExternalLink href={`https://crypto.com/document/defi_swap_tnc`}>
                   DeFi Swap Protocol Terms.
                 </ExternalLink>
               </label>

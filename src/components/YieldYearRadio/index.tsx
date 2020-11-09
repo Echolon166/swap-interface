@@ -96,6 +96,16 @@ export default function YieldYearRadio({ id, value, onUserInput }: InputPanelPro
     <InputPanel id={id}>
       <Container hideInput={false}>
         <InputRow>
+        <YearButton
+            id="one-month-yield-year"
+            name={yearRadioName}
+            value="0.1"
+            onUserInput={onUserInput}
+            defaultChecked={value === '0.1'}
+          >
+            1 Month
+          </YearButton>
+
           <YearButton
             id="one-yield-year"
             name={yearRadioName}

@@ -1,9 +1,11 @@
+const ONE_MONTH = process.env.REACT_APP_ONE_MONTH_STAKE
 const ONE_YEAR = process.env.REACT_APP_ONE_YEAR_STAKE
 const TWO_YEAR = process.env.REACT_APP_TWO_YEAR_STAKE
 const THREE_YEAR = process.env.REACT_APP_THREE_YEAR_STAKE
 const FOUR_YEAR = process.env.REACT_APP_FOUR_YEAR_STAKE
 
 if (
+  typeof ONE_MONTH === 'undefined' ||
   typeof ONE_YEAR === 'undefined' ||
   typeof TWO_YEAR === 'undefined' ||
   typeof THREE_YEAR === 'undefined' ||
@@ -12,6 +14,7 @@ if (
   throw new Error('Stake addresses are not well configured')
 
 export enum Field {
+  ONE_MONTH = 'ONE_MONTH',
   ONE_YEAR = 'ONE_YEAR',
   TWO_YEAR = 'TWO_YEAR',
   THREE_YEAR = 'THREE_YEAR',
@@ -19,6 +22,7 @@ export enum Field {
 }
 
 export const StakeContractAddress = Object.freeze({
+  [Field.ONE_MONTH]: ONE_MONTH,
   [Field.ONE_YEAR]: ONE_YEAR,
   [Field.TWO_YEAR]: TWO_YEAR,
   [Field.THREE_YEAR]: THREE_YEAR,
