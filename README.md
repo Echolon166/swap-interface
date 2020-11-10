@@ -2,7 +2,7 @@
 
 [![Styled With Prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://prettier.io/)
 
-- Arweave port of Crypto.com DeFi Swap is available on the permaweb: [Crypto.com DeFi Swap on Permaweb](https://arweave.net/8k5cURYV7C-o6vfzIguRisqs4gN8_lzpMi3G6PlOMOE)
+- Arweave port of Crypto.com DeFi Swap is available on the permaweb: [Crypto.com DeFi Swap on Permaweb](https://arweave.net/i9VaW-vCwnAeEzSuuDPCf-ZyjMddO1RoJ5xlO78Iomw)
 
 As a new DeFi protocol, DeFi Swap is designed to be the best place to swap and farm DeFi coins at the best available rate, leveraging proven and audited protocols, while offering an outstanding incentive program powered by CRO.
 

@@ -46,15 +46,20 @@ export default {
       myCroStaked,
       myStakeYear
     } = dataPrep(state)
-
-    if (graphPoolCroStaked.isZero()) {
-      return emptyResult
-    }
-
-    if (myLiquidityProvidedUsd.isZero()) {
-      return emptyResult
-    }
     const totalLiquidityUsd = graphTotalPoolLiquidityUsd.plus(myLiquidityProvidedUsd)
+
+    if (totalLiquidityUsd.isZero()) {
+      return emptyResult
+    }
+
+    if (graphPoolCroStaked.plus(myCroStaked).isZero()) {
+      return emptyResult
+    }
+
+    if (myLiquidityProvidedUsd.isZero() || myCroStaked.lt(new BigNumber("1000"))) {
+      return emptyResult
+    }
+
     const multiplier = computeMultiplier({
       croStaked: myCroStaked,
       stakedYear: myStakeYear
@@ -64,13 +69,10 @@ export default {
       .multipliedBy(multiplier)
       .multipliedBy(1000000)
 
-    const remoteCropWeight = graphTotalPoolLiquidityUsd
-      .div(totalLiquidityUsd)
-      .multipliedBy(graphAverageMultiplier)
-      .multipliedBy(1000000)
+    const remoteCropWeight = graphTotalCropWeight
 
-    const totalCropWeightDenominator = remoteCropWeight.plus(cropWeight)
-    const dailyRewardPool = new BigNumber('1000000')
+    const totalCropWeightDenominator = graphTotalCropWeight.plus(cropWeight)
+    const dailyRewardPool = graphPoolCroStaked.plus(myCroStaked).multipliedBy(new BigNumber("0.006"))
     const myShare = cropWeight.div(totalCropWeightDenominator).multipliedBy(dailyRewardPool)
     console.debug('multiplier', multiplier.toString())
     console.debug('cropWeight', cropWeight.toString())
@@ -83,6 +85,7 @@ export default {
       .multipliedBy(graphCroToUsdRate)
       .div(myLiquidityProvidedUsd)
       .multipliedBy(100)
+
     return {
       originalApyPercent: '0.00',
       newApyPercent: apyPercent.toFormat(2),
